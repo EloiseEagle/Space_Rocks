@@ -1,0 +1,22 @@
+A texture filled rectangle.									Done (AngledRectangle, too).
+Debug cycle to next object of same type or next type.		Done
+A general input system										Done except for joystick axes
+Input settings menu											Done
+In-code way to set the debug object							Done				
+Way to end the game and return to menus.					Done
+
+
+For later in term .....
+Compound Rectangle IShape
+Joystick axes
+
+For next time.....
+A system for loading/saving/setting parameters
+Convex polygon IShape
+GUI objects
+A mouse pointer renderer
+There are a lot of parameters in DrawAt. Time to add a "order form" object?
+Organised gamestate stack system	
+Listeners for new HtInput system
+Sort out those horrible menus
+Page system if too many debug lines?

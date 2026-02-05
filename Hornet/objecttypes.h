@@ -1,0 +1,13 @@
+#pragma once
+
+enum class ObjectType {
+	UNKNOWN,
+	SPACESHIP,
+	EXPLOSION,
+	BULLET,
+	SMOKE,
+	ROCKET,
+	ROCK,
+	TRANSPORT,
+	BACKGROUND
+};
