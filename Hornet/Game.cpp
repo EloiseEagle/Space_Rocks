@@ -2,7 +2,8 @@
 #include "HtCamera.h"
 #include "ObjectManager.h"
 #include "HtInput.h"
-
+#include "Rock.h"
+#include "Spaceship.h"
 
 void Game::StartOfProgram()
 {
@@ -21,13 +22,14 @@ void Game::StartOfProgram()
 
 void Game::StartOfGame()
 {
-    for (Rock* &pNextRock : pTheRock)
-    {
-        pNextRock = new Rock();
-        pNextRock->Initialise();
-    }
-    
+    Rock* pRock = new Rock;
+    pRock->Initialise();
+    ObjectManager::instance.AddItem(pRock);
 
+    Spaceship* pSpaceship = new Spaceship;
+    pSpaceship->Initialise();
+    ObjectManager::instance.AddItem(pSpaceship);
+   
     m_gameOver = false;
 
 }
@@ -37,15 +39,8 @@ void Game::Update(double frametime)
     // Use this section for direct rendering
     // *******************************************************************************
 
-    for (Rock* pNextRock : pTheRock)
-    {
-        pNextRock->Update(frametime);
-    }
-    
-    for (Rock* pNextRock : pTheRock)
-    {
-        pNextRock->Render();
-    }
+
+   
     
 
 
@@ -79,11 +74,6 @@ void Game::OnResume()
 
 void Game::EndOfGame()
 {
-    for (Rock* pNextRock : pTheRock)
-    {
-        delete(pNextRock);
-    }
-
     ObjectManager::instance.DeleteAllObjects();     // Removes all objects from the ObjectManager.
     m_gameOver = false;     // Should already be set to false at this stage, but this makes sure.
 }

@@ -9,6 +9,7 @@ Rock::Rock(): GameObject(ObjectType::ROCK)
 
 void Rock::Update(double frametime)
 {
+	
 	m_position = m_position + m_velocity * frametime;
 
 	if (m_position.XValue > 1600)
@@ -36,7 +37,9 @@ void Rock::ProcessCollision(GameObject& other)
 
 void Rock::Initialise()
 {
-	m_position.set(rand()%3200-1600, rand()%2000-1000);
+	
+	m_position.setBearing(rand() % 360, rand() % 1000 + 400);
+	
 	m_velocity.setBearing(rand() % 360, rand() % 190 + 40);
 	m_angle = rand() % 360;
 	int r = rand() % 4;

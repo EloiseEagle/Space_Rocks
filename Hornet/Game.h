@@ -6,7 +6,6 @@
 #include "HtAudio.h"
 #include "GameTimer.h"
 #include "HtInput.h"
-#include "Rock.h"
 
 // 17/06/2023
 // This class is where you will start programming a game.
@@ -65,6 +64,5 @@ public:
 
 private:
     bool m_gameOver;        // If set to true, the game will run EndOfGame( ) and return to the main menu.
-    Rock* pTheRock[10];
 };
 
