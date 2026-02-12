@@ -22,9 +22,13 @@ void Game::StartOfProgram()
 
 void Game::StartOfGame()
 {
-    Rock* pRock = new Rock;
-    pRock->Initialise();
-    ObjectManager::instance.AddItem(pRock);
+    for (int i = 0; i < 5; i++)
+    {
+        Rock* pRock = new Rock;
+        pRock->Initialise();
+        ObjectManager::instance.AddItem(pRock);
+    }
+    
 
     Spaceship* pSpaceship = new Spaceship;
     pSpaceship->Initialise();

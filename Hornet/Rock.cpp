@@ -29,6 +29,9 @@ void Rock::Update(double frametime)
 	{
 		m_velocity.YValue = m_velocity.YValue * -1;
 	}
+
+	m_collisionShape.PlaceAt(m_position, 64);
+
 }
 
 void Rock::ProcessCollision(GameObject& other)
@@ -63,4 +66,9 @@ void Rock::Initialise()
 	
 	SetCollidable();
 	
+}
+
+IShape2D& Rock::GetCollisionShape()
+{
+	return m_collisionShape;
 }

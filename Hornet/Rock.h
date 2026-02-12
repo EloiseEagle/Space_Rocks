@@ -5,7 +5,7 @@ class Rock :
 {
 private:
     Vector2D m_velocity;
-
+    Circle2D m_collisionShape;
 public:
     Rock();
 
@@ -14,5 +14,7 @@ public:
     void ProcessCollision(GameObject& other) override;
 
     void Initialise();
+
+    IShape2D& GetCollisionShape() override;
 };
 
